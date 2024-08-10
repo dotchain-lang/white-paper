@@ -46,11 +46,3 @@ add(3, add(1,2))
 // hello.add(2) 等價於 add(hello, 2)
 // hello.(add(2)) 等價於 add(2, hello)，因為hello會被作為add(2)柯里化後的函數的第一個參數。
 ```
-## Keywords
-```
-let while if else true false
-```
-
-```bash
-python -m unittest
-```
