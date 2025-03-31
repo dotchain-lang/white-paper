@@ -17,44 +17,12 @@ Dotchain VM將會是一個特別的運行時，一個雲原生的運行時，它
 5. 靜態強類型
 6. 柯里化
 
-# 語法
+# Dotchain VM
+## 指令
 ```
-// 註解
-
-// 值宣告
-let times = 123
-let dan: String = "dan chen"
-let alex: String = "alex wong"
-
-// 函數宣告
-sayHello :: String -> String -> Int -> Int
-sayHello from to 0 = ""
-sayHello from to 1 = from + to + "hello"
-sayHello from to times = "hello " + sayHello(from,to, times - 1)
-
-// 函數呼叫
-sayHello(dan, alex, times)
-sayHello(dan)(alex,times)
-
-// 函數呼叫
-add(1,2)
-// currying
-add(1)(2)
-add(3, add(1,2))
-// TODO: 鏈式函數呼叫 . 呼叫函數，將以 . 前的值作為第一個參數
-// hello.add(2) 等價於 add(hello, 2)
-// hello.(add(2)) 等價於 add(2, hello)，因為hello會被作為add(2)柯里化後的函數的第一個參數。
-
-// 結構定義
-type Person struct {
-  name String
-  age int
-}
+PUSH 5      ; pushes 5 to the stack
+ADD         ; pops two values on top of the stack, adds them pushes to stack
+POP         ; pops the value on the stack, will also print it for debugging
+SET A 0     ; sets register A to 0
+HLT         ; stop the program
 ```
-
-# 基本類型
-- Int - 整數
-- Float - 浮點數
-- String - 字串
-- Actor - 進程
-- Fun - 函數
