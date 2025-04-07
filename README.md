@@ -18,11 +18,12 @@ Dotchain VM將會是一個特別的運行時，一個雲原生的運行時，它
 6. 柯里化
 
 # Dotchain VM
+Dotchain VM 是雲原生面向多租戶的虛擬機，因此沒有本地IO，一切都透過Actor和message來進行溝通。廠商應該提供與Actor溝通的方法和實現。
 ## 指令
 ```
-PUSH 5      ; pushes 5 to the stack
+PUSH 5      ; 放5至棧頂
 ADD         ; pops two values on top of the stack, adds them pushes to stack
 POP         ; pops the value on the stack, will also print it for debugging
-SET A 0     ; sets register A to 0
+SET 5 0     ; 把本地變量索引為5的值設為0
 HLT         ; stop the program
 ```
