@@ -19,6 +19,7 @@ Dotchain VM將會是一個特別的運行時，一個雲原生的運行時，它
 
 # Dotchain VM
 Dotchain VM 是雲原生面向多租戶的虛擬機，因此沒有本地IO，一切都透過Actor和message來進行溝通。廠商應該提供與Actor溝通的方法和實現。
+該虛擬機實現了兩個特殊的指令，`send`和`receive`用於發送和接收message。
 ## 指令
 ```
 IPUSH 5      ; 放5至棧頂
